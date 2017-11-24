@@ -36,3 +36,64 @@ h1, h2, h3, h4, h5, h6{
     margin: 0;
     padding: 0;
 }
+
+
+
+
+/*Pagenate*/
+.pagination {
+    margin: 2% 0 1% 0;
+    
+    
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid black;
+    margin: 0 3px 0 3px;
+    background-color: white;
+}
+
+.current{
+   color: white;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin: 0 3px 0 3px;
+    background-color: black;
+  
+}
+
+.previous_page{
+   color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid black;
+    margin: 0 3px 0 3px;
+    background-color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.next_page{
+  color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid black;
+    margin: 0 3px 0 3px;
+    background-color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.disabled{
+  color: #ddd;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
