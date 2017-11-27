@@ -14,6 +14,10 @@ class PlacesController < ApplicationController
         redirect_to root_path
     end
     
+    def show
+        @places = Place.find(params[:id])
+    end
+    
     private
     
     def place_params
