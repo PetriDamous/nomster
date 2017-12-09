@@ -6,7 +6,7 @@ class CreateComments < ActiveRecord::Migration[5.0]
       t.string :rating
       #points to user_id and place_id in other tables
       t.integer :user_id
-      t.integr :place_id
+      t.integer :place_id
       t.timestamps
     end
     #speeds up search for both user_id by itself or user_id and place_id together
