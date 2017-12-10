@@ -37,7 +37,7 @@ class PlacesController < ApplicationController
         end    
         @place.update_attributes(place_params)
         if @place.valid?
-            redirect_to root_path
+            redirect_to place_path(@place)
         else
             render :edit, status: :unprocessable_entity
         end
@@ -54,6 +54,7 @@ class PlacesController < ApplicationController
     
     private
     
+    #pulls out data we need from places form
     def place_params
         params.require(:place).permit(:name, :description, :address)
     end 
