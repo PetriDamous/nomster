@@ -8,7 +8,7 @@ body{
   
 }
 
-/***************Navagation Bar********************/
+/*************** Navagation Bar ********************/
 
 .navbar{
   background: image_url('curls.png');
@@ -22,9 +22,7 @@ body{
   font-size: 25px;
 }
 
-/***********************************************/
-
-/***********Custom box shadow***************/
+/*********** Custom box shadow ***************/
 
 .booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -38,7 +36,7 @@ body{
   padding: 20px;
 }
 
-/**************************************************/
+/************* For h tages *********************/
 
 h1, h2, h3, h4, h5, h6{
     
@@ -46,10 +44,7 @@ h1, h2, h3, h4, h5, h6{
     padding: 0;
 }
 
-
-
-
-/***********Pagination***************/
+/*********** Pagination ***************/
 
 .pagination {
     margin: 2% 0 1% 0;
@@ -107,9 +102,7 @@ h1, h2, h3, h4, h5, h6{
 
 .pagination a:hover:not(.active) {background-color: #ddd;}
 
-/***********************************************************/
-
-/**********Styles Violation Message for Simple Forms********/
+/********** Styles Violation Message for Simple Forms ********/
 
 .help-block{
   color: #ff3333;
@@ -118,9 +111,7 @@ h1, h2, h3, h4, h5, h6{
   padding: 2px 8px 2px 8px;
 }
 
-/***********************************************************/
-
-/***************For Maps***********************************/
+/*************** Displays map graphic ******************************/
 
  #map {
         height: 314px;
