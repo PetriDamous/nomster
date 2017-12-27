@@ -52,7 +52,8 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
-  #Devise
+  # Devise
   config.action_mailer.default_url_options = { host: 'petrid-playground-petrid.c9users.io' }
-  
+  # Carrier Wave 
+  require 'carrierwave/orm/activerecord'
 end
