@@ -1,7 +1,7 @@
 class Comment < ApplicationRecord
     belongs_to :user
     belongs_to :place
-    after_create :send_comment_email
+    after_create :send_email_comment
     
     RATINGS = {
         'one_star': '1_star',
