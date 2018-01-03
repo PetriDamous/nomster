@@ -1,10 +1,10 @@
-<!--------------------------------Holds Place attributes---------------------------------------------------------------------------------------------->
+<!-- Holds Place attributes -->
 <div class="booyah-box col-10 offset-1">
     <h1><%= @place.name %></h1>
     <i><%= @place.address %></i>
     <br><br>
     <p><%= @place.description %></p>
-<!--------------------------------------Displays Map-------------------------------------------------------------------------------------------------->
+<!-- Displays Map -->
     <% if @place.latitude.present? && @place.longitude.present? %>
       <div id="map"></div>
         
@@ -30,7 +30,7 @@
         </script>
     <% end %>   
     <br>
-<!------------------------------------Edit and Delete buttons----------------------------------------------------------------------------------------->    
+<!-- Edit and Delete buttons -->    
     <div class="float-right">
         <% if current_user && current_user == @place.user %>
         <%= link_to 'Edit', edit_place_path(@place), class: "btn btn-primary" %>
@@ -38,7 +38,7 @@
         <% end %>
     </div>
 </div>
-<!--------------------------------------- Adding picutre form---------------------------------------------------------------------------------------------->
+<!-- Adding picutre form -->
 <div class="clear"></div>
 
 <!-- Modal -->
@@ -64,7 +64,7 @@
     </div>
   </div>
 </div>
-<!---------------------------------------Adding comment form----------------------------------------------------------------------------------------------->
+<!-- Adding comment form -->
 <div class="clear"></div>
 
 <!-- Modal -->
@@ -91,7 +91,7 @@
   </div>
 </div>
 
-<!----------------------------------Buttons------------------------------------------------------------------------------------------------------->
+<!-- Add Photo and Add Comment Buttons -->
 <div class="col-10 offset-1">
   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Photo">
     Add a Photo
@@ -102,17 +102,22 @@
   </button>
 </div>
 
-<!---------------------------------- Pictures------------------------------------------------->
+<!-- Pictures -->
+<div class="clear"></div>
+<h1 class="col-10 offset-1">Photos</h1>
 <div class="col-12 col-sm-6">
-  <%= image_tag @photo.picture %>
-  <%= @photo.caption %>
-  
+  <% if @place.photos.present? %>
+    <%= @place.photos.each do |photo| %>
+      <%= image_tag photo.picture %>
+      <%= @photo.caption %>
+    <% end %>
+  <% end %>
   
 </div>
 
-<!---------------------------------- Comments Section ---------------------------------------->
+<!-- Comments Section -->
 <div class="clear"></div>
-
+<br>
 <h1 class="col-10 offset-1">Comments</h1>
 
 <div class="clear"></div>
