@@ -104,15 +104,13 @@
 
 <!-- Pictures -->
 <div class="clear"></div>
-<h1 class="col-10 offset-1">Photos</h1>
+
+  
 <div class="col-12 col-sm-6">
-  <% if @place.photos.present? %>
     <%= @place.photos.each do |photo| %>
       <%= image_tag photo.picture %>
       <%= @photo.caption %>
     <% end %>
-  <% end %>
-  
 </div>
 
 <!-- Comments Section -->
