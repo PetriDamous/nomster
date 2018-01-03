@@ -13,7 +13,7 @@ class PhotosController < ApplicationController
     
     #Pulls in info from form and prevents hackers from injecting data we don't want in our app
     def photo_params
-        params.require(:photo).permit(:photo, :caption)
+        params.require(:photo).permit(:picture, :caption)
     end
     
 end
