@@ -1,5 +1,6 @@
 class PlacesController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+    before_action :set_place, only: [:show, :edit, :update, :destroy]
     
     def index
         @places = Place.order("name").paginate(:page => params[:page], :per_page => 5)
@@ -19,20 +20,17 @@ class PlacesController < ApplicationController
     end
     
     def show
-        @place = Place.find(params[:id])
         @comment = Comment.new
         @photo = Photo.new
     end
     
     def edit
-        @place = Place.find(params[:id])
         if @place.user != current_user
             return render text: 'Not Allowed', status: :forbidden
         end    
     end 
     
     def update
-        @place = Place.find(params[:id])
         if current_user != @place.user
             return render text: 'You are not allowed', status: :forbidden
         end    
@@ -45,7 +43,6 @@ class PlacesController < ApplicationController
     end 
     
     def destroy
-        @place = Place.find(params[:id])
         if current_user != @place.user
             return render text: 'You are not allowed to perform this action', status: :forbidden
         end
@@ -54,6 +51,10 @@ class PlacesController < ApplicationController
     end    
     
     private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_place
+       @place = Place.find(params[:id])
+    end
     
     #pulls out data we need from places form
     def place_params

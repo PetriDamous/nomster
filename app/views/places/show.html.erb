@@ -103,16 +103,18 @@
 </div>
 
 <!-- Pictures -->
+<br>
 <div class="clear"></div>
-
-  
-<div class="col-12 col-sm-6">
-    <%= @place.photos.each do |photo| %>
-      <%= image_tag photo.picture %>
-      <%= @photo.caption %>
-    <% end %>
+<div class="row">
+  <% if @photo.present? %>  
+    <div>
+        <% @place.photos.each do |photo| %>
+          <%= image_tag photo.picture %>
+          <%= photo.caption %>
+        <% end %>
+    </div>
+  <% end %>
 </div>
-
 <!-- Comments Section -->
 <div class="clear"></div>
 <br>
